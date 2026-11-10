@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>简历 · 尤福金 · 个人档案</title>
+<meta name="description" content="尤福金，5 年后端开发工程师，主导教育行业招生 CRM 与订单交易中台全链路设计与服务化改造，擅长 Go 微服务、订单状态机、支付退款、RBAC 权限。">
+<meta property="og:title" content="尤福金 · 后端开发工程师简历">
+<meta property="og:description" content="5 年后端，主导招生 CRM 与订单交易中台（Laravel 单体 → Go 微服务）全链路设计。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="index.html">尤福金 · 个人档案</a>
+    <nav class="tabs">
+      <a href="index.html">个人主页</a>
+      <a href="articles/index.html">文章</a>
+      <a href="resume.html" class="active">简历</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page narrow" style="padding-top:48px;">
+  <main>
+    <section class="sec" style="margin-top:0;"><h2>核心战绩</h2><span class="en">HIGHLIGHTS</span></section>
+    <div class="stats">
+      <div class="card stat"><p class="num">273·334·81</p><p class="cap">招生 CRM + 订单中台</p><p class="sub">控制器·模型·领域服务，支撑 6 类角色</p></div>
+      <div class="card stat"><p class="num">14+8 RPC</p><p class="cap">单体渐进式拆分</p><p class="sub">抽离 Go gRPC 服务，迁移零中断</p></div>
+      <div class="card stat"><p class="num">52·22</p><p class="cap">统一认证授权中心</p><p class="sub">RPC·表，Casbin RBAC + 双 JWT</p></div>
+      <div class="card stat"><p class="num">3×4</p><p class="cap">HR + 企微平台</p><p class="sub">企业主体 × 客户端身份模型</p></div>
+    </div>
+
+    <section class="sec"><h2>技能清单</h2><span class="en">SKILLS</span></section>
+    <div class="card">
+      <div class="skill-row"><span class="k">语言</span><span class="v">Go、PHP</span></div>
+      <div class="skill-row"><span class="k">框架</span><span class="v">GoFrame、go-zero、Laravel</span></div>
+      <div class="skill-row"><span class="k">存储</span><span class="v">MySQL（多库设计、慢查询优化）、Redis（缓存、分布式锁、队列）、Elasticsearch（聚合检索）</span></div>
+      <div class="skill-row"><span class="k">中间件</span><span class="v">gRPC + Protobuf、消息队列、定时任务（gcron / Laravel Scheduler）、WebSocket</span></div>
+      <div class="skill-row"><span class="k">业务能力</span><span class="v">订单状态机、多级审批流、微信支付/支付宝（多商户）、退款返利、电子签（e签宝）、RBAC 权限、JWT 单点登录、微信生态（小程序/公众号/企业微信）</span></div>
+      <div class="skill-row"><span class="k">工程化</span><span class="v">Docker、Kubernetes（kustomize）、CI/CD、PHPUnit、代码生成工作流</span></div>
+    </div>
+
+    <section class="sec"><h2>工作经历</h2><span class="en">EXPERIENCE</span></section>
+    <div class="card co-card">
+      <div class="co-line"><h3>某教育科技公司 · 后端开发工程师</h3><span class="period">2021.07 – 至今 · 常州</span></div>
+      <p class="co-desc">成人教育培训与人才服务数字化平台。后端主力，负责老单体核心模块与新系统服务化架构设计。</p>
+    </div>
+
+    <article class="card proj">
+      <div class="inner">
+        <div class="p-head"><h3>招生 CRM 与订单交易中台</h3><span class="role">技术负责人 / 主导设计</span></div>
+        <p class="p-summary">招生获客与交易履约中台，覆盖线索到业绩核算全链路，公司营收技术底座。</p>
+        <div class="badges"><span class="badge">273 ctrl</span><span class="badge">334 model</span><span class="badge">81 svc</span><span class="badge">14+8 RPC</span></div>
+      </div>
+      <details>
+        <summary>6 项关键设计</summary>
+        <div class="detail-body">
+          <p class="p-meta">Laravel + Go gRPC + Elasticsearch · 3×MySQL / 4×Redis / 86 控制台命令</p>
+          <ul>
+            <li><strong>订单统一视图</strong>：四类订单聚合到 all_orders，子订单 ID 与原始支付单 ID 做新老映射，支撑迁移期双轨并行。</li>
+            <li><strong>复杂状态机与事务一致性</strong>：订单/退款单/审批流三层状态机（退款单十余个状态），流转全在事务内并做前置校验；金额以分存储。</li>
+            <li><strong>多级审批流引擎</strong>：申请→团队长→总经办→财务放款，支持逐级激活、驳回恢复、凭证上传、失败重发。</li>
+            <li><strong>支付与多商户体系</strong>：微信/支付宝 + 线下凭证收款，多商户动态路由；超时未支付自动关单回补库存。</li>
+            <li><strong>渐进式服务化拆分</strong>：订单账本与线索分配抽离为 Go gRPC 服务（go-order / clue），不停机迁移。</li>
+            <li><strong>业绩与经营报表</strong>：绩效、营业额、应收等按月固化；战报排行榜用 ES 聚合 + Redis 缓存。</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <article class="card proj">
+      <div class="inner">
+        <div class="p-head"><h3>HR + 企业微信一体化管理平台</h3><span class="role">核心后端</span></div>
+        <p class="p-summary">集团型 HR 后端，一套代码支撑 3 家企业主体、4 类客户端，覆盖招聘到离职全周期。</p>
+        <div class="badges"><span class="badge">332 routes</span><span class="badge">66 model</span><span class="badge">27 svc</span></div>
+      </div>
+      <details>
+        <summary>4 项关键设计</summary>
+        <div class="detail-body">
+          <p class="p-meta">HR 后台 / 招聘小程序 / 管理者小程序 / 外部系统 API · 16 中间件（自研 8）</p>
+          <ul>
+            <li><strong>多端身份模型隔离</strong>：4 类客户端 4 种身份，3 套 JWT guard + 独立中间件链隔离，不合并用户表。</li>
+            <li><strong>双轨权限体系</strong>：本地 Spatie RBAC + 集中权限系统（gRPC 校验），按路由组分开使用。</li>
+            <li><strong>企业微信深度集成</strong>：多企业多应用配置抽象、通讯录与打卡同步、消息推送、网页授权、回调验签。</li>
+            <li><strong>考勤数据管道</strong>：拉取企微打卡日/月报，生成实时与固化月报，统计迟到/早退/缺卡/旷工/休假。</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <article class="card proj">
+      <div class="inner">
+        <div class="p-head"><h3>统一认证与授权中心</h3><span class="role">Go / 独立设计交付</span></div>
+        <p class="p-summary">统一身份认证与授权中心，业务系统接入一套 RPC 即获得完整鉴权能力。</p>
+        <div class="badges"><span class="badge">go-zero</span><span class="badge">52 RPC</span><span class="badge">22 表</span></div>
+      </div>
+      <details>
+        <summary>4 项关键设计</summary>
+        <div class="detail-body">
+          <p class="p-meta">Go + go-zero · HTTP API + gRPC RPC 双进程</p>
+          <ul>
+            <li><strong>凭证归一</strong>：工号、外部手机号、企微 code 等登录入口归一到同一员工身份，新增方式不改签发校验逻辑。</li>
+            <li><strong>令牌全生命周期</strong>：JWT 签发/校验/刷新/销毁，按系统标识选密钥，SSO 顶号控制，旧 token 进 Redis 黑名单。</li>
+            <li><strong>多租户 RBAC</strong>：Casbin 四级模型（用户→角色→权限组→权限），appid 作权限域，应用间互不干扰。</li>
+            <li><strong>全链路审计</strong>：登录、签发、销毁、权限变更、业务操作全留日志，支撑完整回溯。</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <article class="card proj">
+      <div class="inner">
+        <div class="p-head"><h3>沪优学招生获客 SaaS</h3><span class="role">Go / 主力开发</span></div>
+        <p class="p-summary">教育机构招生获客 SaaS 后端，覆盖线索到报表全链路，服务 7+ 个微信小程序与多端。</p>
+        <div class="badges"><span class="badge">GoFrame</span><span class="badge">MySQL 双库</span><span class="badge">7+ 小程序</span></div>
+      </div>
+      <details>
+        <summary>4 项关键设计</summary>
+        <div class="detail-body">
+          <p class="p-meta">Go / GoFrame / Redis · gRPC 客户端对接内部 HR / Clue / Order 服务</p>
+          <ul>
+            <li><strong>多渠道线索统一接入</strong>：巨量引擎回调、SEO、小程序、企微、人工录入统一入库，支持标签、溯源、合并去重。</li>
+            <li><strong>线索自动分配引擎</strong>：排班轮转分配、组长分配、失败补偿重分配、超时自动回收，全程留痕。</li>
+            <li><strong>报表预聚合固化</strong>：多周期预计算固化快照，查询读表而非实时聚合。</li>
+            <li><strong>数据安全</strong>：手机号/微信号脱敏展示，查看明文走独立接口并记录审计日志。</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <article class="card proj">
+      <div class="inner">
+        <div class="p-head"><h3>在线教育三端系统</h3><span class="role">Go / 后端开发</span></div>
+        <p class="p-summary">成人职业教育在线教育系统，学员端/管理后台/教师直播端三个独立 Go 服务协同。</p>
+        <div class="badges"><span class="badge">3 Go 服务</span><span class="badge">WebSocket</span><span class="badge">腾讯云直播</span></div>
+      </div>
+      <details>
+        <summary>3 项关键设计</summary>
+        <div class="detail-body">
+          <p class="p-meta">Go / GoFrame / MySQL 共享库 / Redis · 课程、点播、题库、督学、直播</p>
+          <ul>
+            <li><strong>三端协同架构</strong>：三个独立 Go module 共享数据库 + HTTP 接口协同，后台作中枢对接 order / hr / exam。</li>
+            <li><strong>跨端扫码登录</strong>：直播端二维码 → 公众号 OAuth → 回调写 Redis → 轮询签发 JWT，教师 Web 免密登录。</li>
+            <li><strong>AI 能力接入</strong>：AI 问答（SSE 流式）、AI 出题，聊天历史落库。</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <section class="sec"><h2>教育与自评</h2><span class="en">BACKGROUND</span></section>
+    <div class="bottom">
+      <div class="card edu">
+        <h3>教育经历</h3>
+        <p class="school">江苏理工学院</p>
+        <p class="sub">计算机科学与技术 · 本科<br>2017.09 – 2021.06</p>
+      </div>
+      <div class="card self">
+        <h3>自我评价</h3>
+        <ul>
+          <li>习惯在复杂业务里做抽象，能判断拆服务与保留单体的时机</li>
+          <li>重视工程纪律：状态机走事务、金额用分存储、审批留痕、操作可审计</li>
+          <li>能从代码静态事实推导系统规模，不依赖无法验证的性能数字</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</div>
+<footer class="site-footer"><span>© 2026 尤福金 · 个人档案</span><span class="mono">BUILT WITH PLAIN HTML</span></footer>
+</body>
+</html>
