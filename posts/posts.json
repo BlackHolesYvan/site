@@ -1,5 +1,16 @@
 [
   {
+    "file": "Goframe",
+    "title": "GoFrame 框架使用心得：工程结构与常用代码实现",
+    "date": "2026-11-10",
+    "summary": "从项目初始化、单仓/多仓工程结构到 Redis 封装、JWT、SQL 辅助函数，一份 GoFrame 实战笔记。",
+    "tags": [
+      "Go",
+      "GoFrame",
+      "工程实践"
+    ]
+  },
+  {
     "file": "order-state-machine",
     "title": "订单状态机设计：从十余个退款状态谈到事务一致性",
     "date": "2026-11-10",
